@@ -29,6 +29,4 @@ class FIO extends Component{
   }
 }
 
-
-
- FIO;
+export default FIO;

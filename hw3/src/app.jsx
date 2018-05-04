@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-//import './app/styles/style.scss'
 import KanbanBoard from './app/components/kanban/KanbanBoard'
 import './app/styles/kanban.css'
+import "bootstrap/dist/css/bootstrap.css";
+import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
+
 
 const app = document.getElementById('app');
 
