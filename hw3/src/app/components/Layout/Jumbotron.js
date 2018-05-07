@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import { Jumbotron, Button } from 'reactstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Jumbotron, Button } from 'react-bootstrap';
 
 class JumbotronText extends Component{
   render(){

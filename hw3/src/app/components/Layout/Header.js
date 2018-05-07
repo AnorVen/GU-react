@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Header extends Component{
   render(){
@@ -18,8 +19,8 @@ class Header extends Component{
         <Col sm="4">
           <Breadcrumb>
             <BreadcrumbItem active>Home</BreadcrumbItem>
-            <BreadcrumbItem><a href="#">About</a></BreadcrumbItem>
-            <BreadcrumbItem><a href="#">Contact</a></BreadcrumbItem>
+            <BreadcrumbItem><Link href="#">About</Link></BreadcrumbItem>
+            <BreadcrumbItem><Link href="#">Contact</Link></BreadcrumbItem>
           </Breadcrumb>
         </Col>
         <Col sm='3'>

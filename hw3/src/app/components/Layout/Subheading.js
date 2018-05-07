@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import { Media } from 'reactstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Media } from 'react-bootstrap';
 
 class Subheading extends Component{
   render(){

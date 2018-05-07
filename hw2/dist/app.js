@@ -66,7 +66,7 @@
 
 	var _KanbanBoard2 = _interopRequireDefault(_KanbanBoard);
 
-	__webpack_require__(83);
+	__webpack_require__(67);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24240,29 +24240,54 @@
 	var KanbanCard = function (_Component) {
 	  _inherits(KanbanCard, _Component);
 
-	  function KanbanCard() {
+	  function KanbanCard(props) {
 	    _classCallCheck(this, KanbanCard);
 
-	    return _possibleConstructorReturn(this, (KanbanCard.__proto__ || Object.getPrototypeOf(KanbanCard)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (KanbanCard.__proto__ || Object.getPrototypeOf(KanbanCard)).call(this, props));
+
+	    _this.state = {
+	      showDetails: false
+	    };
+
+	    _this.showCloseDetails = _this.showCloseDetails.bind(_this);
+
+	    return _this;
 	  }
 
 	  _createClass(KanbanCard, [{
+	    key: 'showCloseDetails',
+	    value: function showCloseDetails() {
+	      this.setState({
+	        showDetails: !this.state.showDetails
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var cardDetails = void 0;
+
+	      if (this.state.showDetails) {
+	        cardDetails = _react2.default.createElement(
+	          'div',
+	          { className: 'cardDisk' },
+	          this.props.discrition,
+	          _react2.default.createElement(_KanbanCheckList2.default, { cardId: this.props.id, tasks: this.props.tasks })
+	        );
+	      }
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'card' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'cardTitle' },
-	          this.props.title
+	          this.props.title,
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: this.showCloseDetails },
+	            'X'
+	          )
 	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'cardDisk' },
-	          this.props.discrition,
-	          _react2.default.createElement(_KanbanCheckList2.default, { cardId: this.props.id, tasks: this.props.tasks })
-	        )
+	        cardDetails
 	      );
 	    }
 	  }]);
@@ -24375,8 +24400,46 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)(module)))
 
 /***/ }),
-/* 67 */,
-/* 68 */,
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(68);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(70)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../node_modules/css-loader/index.js!./kanban.css", function() {
+				var newContent = require("!!../../../node_modules/css-loader/index.js!./kanban.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(69)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "* {\n    box-sizing: border-box;\n}\nhtml, body, #app {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n}\nbody {\n    background: #eee;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\nh1 {\n    font-weight: 200;\n    color: #3b414c;\n    font-size: 20px;\n}\nul {\n    list-style-type: none;\n    padding: 0;\n    margin: 0;\n}\n.app {\n    white-space: nowrap;\n    height: 100%;\n}\n.list {\n    position: relative;\n    display: inline-block;\n    vertical-align: top;\n    white-space: normal;\n    height: 100%;\n    width: 33%;\n    padding: 0 20px;\n    overflow: auto;\n}\n.list:not(:last-child):after {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 1px;\n    height: 99%;\n    background: linear-gradient(to bottom, #eee 0%, #ccc 50%, #eee 100%) fixed;\n}\n.card {\n    position: relative;\n    z-index: 1;\n    background: #fff;\n    width: 100%;\n    padding: 10px 10px 10px 15px;\n    margin: 0 0 10px 0;\n    overflow: auto;\n    border: 1px solid #e5e5df;\n    border-radius: 3px;\n    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);\n}\n.card__title {\n    font-weight: bold;\n    border-bottom: solid 5px transparent;\n}\n.card__title:before {\n    display: inline-block;\n    width: 1em;\n    content: '\\F084';\n}\n.card__title--is-open:before {\n    content: '\\F082';\n}\n.checklist__task:first-child {\n    margin-top: 10px;\n    padding-top: 10px;\n    border-top: dashed 1px #ddd;\n}\n.checklist__task--remove:after{\n    display: inline-block;\n    color: #d66;\n    content: \"+\";\n}\n\n#search {\n    font-size: 1.2em;\n    padding-left: 20px;\n    padding-top: 20px;\n}\n\n#search input {\n    width: 200px;\n    font-size: 1.2em;\n    border-radius: 3px;\n    margin-left: 5px;\n    display: inline-block;\n}", ""]);
+
+	// exports
+
+
+/***/ }),
 /* 69 */
 /***/ (function(module, exports) {
 
@@ -24433,12 +24496,7 @@
 
 
 /***/ }),
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -24687,53 +24745,6 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
-
-
-/***/ }),
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(84);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(75)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../node_modules/css-loader/index.js!./kanban.css", function() {
-				var newContent = require("!!../../../node_modules/css-loader/index.js!./kanban.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(69)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "* {\n    box-sizing: border-box;\n}\nhtml, body, #app {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n}\nbody {\n    background: #eee;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\nh1 {\n    font-weight: 200;\n    color: #3b414c;\n    font-size: 20px;\n}\nul {\n    list-style-type: none;\n    padding: 0;\n    margin: 0;\n}\n.app {\n    white-space: nowrap;\n    height: 100%;\n}\n.list {\n    position: relative;\n    display: inline-block;\n    vertical-align: top;\n    white-space: normal;\n    height: 100%;\n    width: 33%;\n    padding: 0 20px;\n    overflow: auto;\n}\n.list:not(:last-child):after {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 1px;\n    height: 99%;\n    background: linear-gradient(to bottom, #eee 0%, #ccc 50%, #eee 100%) fixed;\n}\n.card {\n    position: relative;\n    z-index: 1;\n    background: #fff;\n    width: 100%;\n    padding: 10px 10px 10px 15px;\n    margin: 0 0 10px 0;\n    overflow: auto;\n    border: 1px solid #e5e5df;\n    border-radius: 3px;\n    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);\n}\n.card__title {\n    font-weight: bold;\n    border-bottom: solid 5px transparent;\n}\n.card__title:before {\n    display: inline-block;\n    width: 1em;\n    content: '\\F084';\n}\n.card__title--is-open:before {\n    content: '\\F082';\n}\n.checklist__task:first-child {\n    margin-top: 10px;\n    padding-top: 10px;\n    border-top: dashed 1px #ddd;\n}\n.checklist__task--remove:after{\n    display: inline-block;\n    color: #d66;\n    content: \"+\";\n}\n\n#search {\n    font-size: 1.2em;\n    padding-left: 20px;\n    padding-top: 20px;\n}\n\n#search input {\n    width: 200px;\n    font-size: 1.2em;\n    border-radius: 3px;\n    margin-left: 5px;\n    display: inline-block;\n}", ""]);
-
-	// exports
 
 
 /***/ })
