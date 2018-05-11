@@ -11,6 +11,7 @@ export default class KanbanCheckList extends Component {
         </li>
       )
     });
+
     return (
       <div className="checkList">
       <ul>

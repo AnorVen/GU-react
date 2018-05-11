@@ -5,14 +5,12 @@ export default class KanbanCard extends Component {
   constructor(props) {
     super(props);
     this.state={
-        showDetails: false
-      }
+        showDetails: true
+      },
 
       this.showCloseDetails = this.showCloseDetails.bind(this);
-
-
-
   }
+
   showCloseDetails(){
     this.setState({
       showDetails: !this.state.showDetails
@@ -22,7 +20,6 @@ export default class KanbanCard extends Component {
   render() {
     let cardDetails;
 
-
     if(this.state.showDetails){
       cardDetails = (
         <div className="cardDisk">
@@ -30,7 +27,6 @@ export default class KanbanCard extends Component {
           <KanbanCheckList cardId={this.props.id} tasks={this.props.tasks}/>
         </div>
       )
-
 
     }
     return (
@@ -42,6 +38,5 @@ export default class KanbanCard extends Component {
         {cardDetails}
       </div>
     )
-
   }
 }

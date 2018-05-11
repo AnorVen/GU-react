@@ -66,6 +66,10 @@
 
 	var _KanbanBoard2 = _interopRequireDefault(_KanbanBoard);
 
+	var _AddTask = __webpack_require__(85);
+
+	var _AddTask2 = _interopRequireDefault(_AddTask);
+
 	__webpack_require__(67);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -80,51 +84,58 @@
 
 	var app = document.getElementById('app');
 
-	var cardList = [{
-	  id: 1,
-	  title: 'read book',
-	  discrition: 'book for React',
-	  status: 'done',
-	  tasks: []
-	}, {
-	  id: 2,
-	  title: 'learn ',
-	  discrition: 'learn',
-	  status: 'todo',
-	  tasks: [{
-	    id: 1,
-	    name: 'learn jsx',
-	    done: true
-	  }, {
-	    id: 2,
-	    name: 'learn routing',
-	    done: false
-	  }, {
-	    id: 3,
-	    name: 'learn store',
-	    done: false
-	  }]
-	}, {
-	  id: 3,
-	  title: 'sleep',
-	  discrition: 'sleep',
-	  status: 'in-progress',
-	  tasks: []
-	}, {
-	  id: 4,
-	  title: 'kanban',
-	  discrition: 'kanban',
-	  status: 'in-progress',
-	  tasks: []
-	}];
-
 	var App = function (_Component) {
 	  _inherits(App, _Component);
 
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+	    _this.cardList = [{
+	      id: 1,
+	      title: 'read book',
+	      discrition: 'book for React',
+	      status: 'done',
+	      tasks: []
+	    }, {
+	      id: 2,
+	      title: 'learn ',
+	      discrition: 'learn',
+	      status: 'todo',
+	      tasks: [{
+	        id: 1,
+	        name: 'learn jsx',
+	        done: true
+	      }, {
+	        id: 2,
+	        name: 'learn routing',
+	        done: false
+	      }, {
+	        id: 3,
+	        name: 'learn store',
+	        done: false
+	      }]
+	    }, {
+	      id: 3,
+	      title: 'sleep',
+	      discrition: 'sleep',
+	      status: 'in-progress',
+	      tasks: []
+	    }, {
+	      id: 4,
+	      title: 'kanban',
+	      discrition: 'kanban',
+	      status: 'in-progress',
+	      tasks: []
+	    }];
+
+
+	    _this.state = {
+	      cards: _this.cardList
+	    };
+
+	    return _this;
 	  }
 
 	  _createClass(App, [{
@@ -134,13 +145,26 @@
 	        'div',
 	        null,
 	        'Kanban',
-	        _react2.default.createElement(_KanbanBoard2.default, { cards: cardList })
+	        _react2.default.createElement(_KanbanBoard2.default, { cards: this.state.cards }),
+	        _react2.default.createElement(_AddTask2.default, { parent: this, cards: this.state.cards })
 	      );
 	    }
 	  }]);
 
 	  return App;
 	}(_react.Component);
+
+	/*
+	App.propTypes = {
+	  initialData: PropTypes.arrayOf(PropTypes.shape({
+	    id: PropTypes.number.isRequired,
+	    title: PropTypes.string.isRequired,
+	    status: PropTypes.string.isRequired,
+	    discrition: PropTypes.string.isRequired,
+	    tasks: PropTypes.arrayOf(React.PropTypes.object).isRequired
+	  })).isRequired
+	};
+	*/
 
 	_reactDom2.default.render(_react2.default.createElement(App, null), app);
 	;
@@ -155,7 +179,6 @@
 	  }
 
 	  reactHotLoader.register(app, 'app', 'C:/Anor/OSPanel/domains/localhost/my-app/react-app/GU-react/hw2/src/app.jsx');
-	  reactHotLoader.register(cardList, 'cardList', 'C:/Anor/OSPanel/domains/localhost/my-app/react-app/GU-react/hw2/src/app.jsx');
 	  reactHotLoader.register(App, 'App', 'C:/Anor/OSPanel/domains/localhost/my-app/react-app/GU-react/hw2/src/app.jsx');
 	  leaveModule(module);
 	})();
@@ -24246,11 +24269,8 @@
 	    var _this = _possibleConstructorReturn(this, (KanbanCard.__proto__ || Object.getPrototypeOf(KanbanCard)).call(this, props));
 
 	    _this.state = {
-	      showDetails: false
-	    };
-
-	    _this.showCloseDetails = _this.showCloseDetails.bind(_this);
-
+	      showDetails: true
+	    }, _this.showCloseDetails = _this.showCloseDetails.bind(_this);
 	    return _this;
 	  }
 
@@ -24365,6 +24385,7 @@
 	          tasks.name
 	        );
 	      });
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'checkList' },
@@ -24746,6 +24767,114 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ }),
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	(function () {
+	  var enterModule = __webpack_require__(2).enterModule;
+
+	  enterModule && enterModule(module);
+	})();
+
+	var _react = __webpack_require__(40);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AddTask = function (_Component) {
+	  _inherits(AddTask, _Component);
+
+	  function AddTask(props) {
+	    var _this;
+
+	    _classCallCheck(this, AddTask);
+
+	    (_this = _possibleConstructorReturn(this, (AddTask.__proto__ || Object.getPrototypeOf(AddTask)).call(this, props)), _this), _this.addTask = _this.addTask.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(AddTask, [{
+	    key: 'addTask',
+	    value: function addTask() {
+	      //console.log(this.state.cards)
+	      var a = {
+	        id: 5,
+	        title: 'read book',
+	        discrition: 'book for React',
+	        status: 'done',
+	        tasks: []
+	      };
+	      var b = this.props.cards.push(a);
+	      this.props.parent.setState({
+	        cards: b
+	      });
+	      console.log(this.state.cards);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'button',
+	        { onClick: this.addTask },
+	        '\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0442\u0430\u0441\u043A\u0443'
+	      );
+	    }
+	  }]);
+
+	  return AddTask;
+	}(_react.Component);
+
+	var _default = AddTask;
+	exports.default = _default;
+	;
+
+	(function () {
+	  var reactHotLoader = __webpack_require__(2).default;
+
+	  var leaveModule = __webpack_require__(2).leaveModule;
+
+	  if (!reactHotLoader) {
+	    return;
+	  }
+
+	  reactHotLoader.register(AddTask, 'AddTask', 'C:/Anor/OSPanel/domains/localhost/my-app/react-app/GU-react/hw2/src/app/components/kanban/AddTask.js');
+	  reactHotLoader.register(_default, 'default', 'C:/Anor/OSPanel/domains/localhost/my-app/react-app/GU-react/hw2/src/app/components/kanban/AddTask.js');
+	  leaveModule(module);
+	})();
+
+	;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)(module)))
 
 /***/ })
 /******/ ]);
