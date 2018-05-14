@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
@@ -20,3 +21,20 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+
+# Created by .ignore support plugin (hsz.mobi)
+.DS_Store
+.idea
+*.ai
+*.log
+*.psd
+*.sublime
+*css/*.css
+node_modules/*
+psd/*
+build/*
+*/other/*
+*/dist/*
+
+>>>>>>> origin/hw5

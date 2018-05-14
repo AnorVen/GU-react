@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 //import './app/styles/style.scss'
@@ -102,3 +103,16 @@ App.propTypes = {
 */
 
 ReactDOM.render(<App/>, app);
+=======
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+const app = document.getElementById('app');
+
+ReactDOM.render(
+    <div onClick={()=>{alert('1');}}>
+        Второе приложение на React
+    </div>,
+app);
+>>>>>>> origin/hw5

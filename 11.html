@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.img-1 {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob3.jpg);
+		}
+
+		.img-1.active {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob1-1.jpg);
+		}
+
+		.img-2 {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob1.jpg);
+		}
+
+		.img-2.active {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob2-2.jpg);
+		}
+
+		.img-3 {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob4.jpg);
+		}
+
+		.img-3.active {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob3-3.jpg);
+		}
+
+		.img-4 {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob2.jpg);
+		}
+
+		.img-4.active {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob4-4.jpg);
+		}
+
+		.img-5 {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob5.jpg);
+		}
+
+		.img-5.active {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob5-5.jpg);
+		}
+
+		.img-6 {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob6.jpg);
+		}
+
+		.img-6.active {
+			background-image: url(https://pandamoscow.ru/wp-content/uploads/2018/05/mob6-6.jpg);
+		}
+
+		.mob-section {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			padding-bottom: 22px;
+		}
+
+		.mob-img {
+			text-align: left;
+			padding-right: 20px;
+			min-width: 113px;
+		}
+
+		.mob-img div {
+			width: 93px;
+			height: 93px;
+		}
+		.mob-title{
+			color: #515151;
+			text-decoration: underline;
+			font-size: 36px;
+			margin-top: 10px;
+		}
+		.mob-title.active {
+			text-decoration: none;
+			color: #5769A0;
+			font-size: 36px;
+			margin-top: 10px;
+		}
+
+		.mob_list {
+			font-size: 22px;
+			color: #5769A0;
+			margin-bottom: 0;
+		}
+
+		.mob_list--kreativ {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		.mob_item {
+			padding-bottom: 5px;
+		}
+
+		.mob_item span {
+			color: #515151;
+			font-size: 22px;
+
+		}
+
+		.mob_item--1 {
+			color: #515151;
+		}
+
+		.mob_item--2 {
+			color: #5769A0;
+			text-transform: uppercase;
+		}
+
+		@media screen and (max-width: 370px) {
+			.mob_list {
+				padding-left: 20px;
+			}
+
+			.mob_list--kreativ {
+				padding-left: 0;
+			}
+		}
+
+		@media screen and (max-width: 350px) {
+			.mob_list {
+				padding-left: 10px;
+				font-size: 18px;
+			}
+
+			.mob-title {
+				font-size: 30px;
+			}
+
+			.mob_list--kreativ {
+				padding-left: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+
+
+<div class="mobile-can">
+	<div class="mob-section">
+		<div class="mob-img">
+			<div class="img-1">
+
+			</div>
+		</div>
+		<div class="mob-text">
+			<h3 class="mob-title">ВИДЕО</h3>
+			<ul class="mob_list hide">
+				<li class="mob_item"><span>Промо-, рекламные,<br>
+					имиджевые ролики</span></li>
+				<li class="mob_item"><span>Павильонные,<br>
+					натурные съемки,<br>
+					аэросъемка</span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="mob-section">
+		<div class="mob-img">
+			<div class="img-2">
+
+			</div>
+		</div>
+		<div class="mob-text">
+			<h3 class="mob-title">ГРАФИКА</h3>
+			<ul class="mob_list hide">
+				<li class="mob_item"><span>Графический<br>
+					дизайн</span></li>
+				<li class="mob_item"><span>Анимация</span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="mob-section">
+		<div class="mob-img">
+			<div class="img-3">
+
+			</div>
+		</div>
+		<div class="mob-text">
+			<h3 class="mob-title">Креатив</h3>
+			<ul class="mob_list mob_list--kreativ hide">
+				<li class="mob_item mob_item--1"><span>Концепции,<br>
+					сценарии,
+					идеи</span></li>
+				<li class="mob_item mob_item--2">Придумываем,<br>
+					предлагаем,<br>
+					реализовываем
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="mob-section">
+		<div class="mob-img">
+			<div class="img-4">
+
+			</div>
+		</div>
+		<div class="mob-text">
+			<h3 class="mob-title">SMM</h3>
+			<ul class="mob_list hide">
+				<li class="mob_item"><span>Креативная<br>
+					стратегия в SMM</span></li>
+				<li class="mob_item"><span>Уникальный<br>
+					контент</span></li>
+				<li class="mob_item"><span>Продвижение</span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="mob-section">
+		<div class="mob-img">
+			<div class="img-5">
+
+			</div>
+		</div>
+		<div class="mob-text">
+			<h3 class="mob-title">PR</h3>
+			<ul class="mob_list hide">
+				<li class="mob_item "><span>Коммуникационная<br>
+					стратегия</span></li>
+				<li class="mob_item"><span>Бизнес - и<br>
+					продуктовый PR</span></li>
+				<li class="mob_item"><span>Пресс-мероприятия</span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="mob-section">
+		<div class="mob-img">
+			<div class="img-6">
+
+			</div>
+		</div>
+		<div class="mob-text">
+
+			<h3 class="mob-title">БЛОГЕРЫ</h3>
+			<ul class="mob_list  hide">
+				<li class="mob_item"><span>Более 400<br>
+					проверенных
+					блогеров</span></li>
+				<li class="mob_item"><span>Спецпроекты</span></li>
+				<li class="mob_item"><span>Product placement</span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.mob-section .mob-img div').toggleClass('active');
+    $('.mob-section .hide').hide();
+    $('.mob-section .mob-title').on('click', function () {
+        console.log(this);
+        $(this).toggleClass('active').siblings('.mob_list').slideToggle(300);
+        $(this).parent().siblings('.mob-img').children().toggleClass('active');
+      }
+    );
+    $('.mob-section .mob-img div').on('click', function () {
+        console.log(this);
+        $(this).toggleClass('active');
+        $(this).parent().siblings().children('.mob-title').toggleClass('active');
+        $(this).parent().siblings().children('.mob_list').slideToggle(300);
+      }
+    );
+
+
+  });
+</script>
+
+
+</body>
+</html>

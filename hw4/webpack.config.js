@@ -11,7 +11,11 @@ module.exports = {
         app: path.join(__dirname, 'src', 'app')
     },
     output: {
+<<<<<<< HEAD
         path: path.join(__dirname, 'dist'),
+=======
+        path: path.join(__dirname, 'bootstrap'),
+>>>>>>> origin/hw5
         filename: '[name].js'
     },
     module: {
@@ -57,16 +61,27 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.html'),
+<<<<<<< HEAD
             filename: path.join(__dirname, 'dist', 'index.html')
+=======
+            filename: path.join(__dirname, 'bootstrap', 'index.html')
+>>>>>>> origin/hw5
         }),
         new BrowserSyncPlugin({
             host: 'localhost',
             port: 3000,
             server: {
+<<<<<<< HEAD
                 baseDir: ['dist']
             }
         }),
         new CleanWebpackPlugin(['dist']),
+=======
+                baseDir: ['bootstrap']
+            }
+        }),
+        new CleanWebpackPlugin(['bootstrap']),
+>>>>>>> origin/hw5
 
     ]
 };
