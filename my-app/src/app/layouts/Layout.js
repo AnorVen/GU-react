@@ -16,21 +16,21 @@ export default class Layout extends React.Component {
 
    mainMenu = [
     {
-      href: '/',
-      title: 'Главная'
+      menuhref: '/',
+      menutitle: 'Главная'
     },
     {
-      href: '/users',
-      title: 'Пользователи'
+      menuhref: '/users',
+      menutitle: 'Пользователи'
     }, {
-      href: '/blog',
-      title: 'Blog'
+       menuhref: '/blog',
+       menutitle: 'Blog'
     }, {
-      href: '/coments',
-      title: 'Coments'
+       menuhref: '/coments',
+       menutitle: 'Coments'
     }, {
-      href: '/kanban',
-      title: 'KanbanBoard'
+       menuhref: '/kanban',
+       menutitle: 'KanbanBoard'
     }];
 
 

@@ -8,6 +8,7 @@ import PageNotFound from './app/pages/PageNotFound';
 import Users from './app/pages/Users';
 import Blog from './app/pages/Blog';
 import Coments from './app/pages/Coments';
+import KanbanBoard from './app/components/kanban/KanbanBoard'
 
 
 
@@ -28,7 +29,7 @@ class App extends Component {
             <Route path="users" component={Users} />
             <Route path="blog" component={Blog} />
             <Route path="comets" component={Coments} />
-            {/*<Route path="kanban" component={KanbanBoard} />*/}
+            <Route path="kanban" component={KanbanBoard} />
             <Route path="*" component={PageNotFound} />
           </Route>
         </Router>

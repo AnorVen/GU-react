@@ -3,15 +3,15 @@ import {Link} from 'react-router';
 
 export default class MenuItem extends React.Component
 {
-  isActive(href) {
-    return window.location.pathname === href;
+  constructor(props){
+    super(props)
+
   }
     render(){
         return (
-            <li className={this.isActive(this.props.href) ? 'active': ''}>
-                <Link to={this.props.href}>
+            <li className={this.props.isActive(this.props.menuhref)}>
                     {this.props.children}
-                </Link>
+
             </li>
         );
     }

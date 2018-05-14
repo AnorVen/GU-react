@@ -12,6 +12,7 @@ import {Link} from 'react-router';
 class Header extends Component{
   render(){
     return(
+      <Container>
       <Row className='header'>
         <Col  sm="5" className="logo">
           <div className="logo__img"><img
@@ -22,7 +23,8 @@ class Header extends Component{
           </div>
         </Col>
         <Col sm="4">
-          {this.props.children}
+          <input type="text" placeholder="search" />
+
         </Col>
         <Col sm='3'>
           <button type="button" className="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-md">Large modal</button>
@@ -47,15 +49,13 @@ class Header extends Component{
           </div>
 
         </Col>
-        <Col md="12">
-          <Breadcrumb>
-            <BreadcrumbItem active>Home</BreadcrumbItem>
-            <BreadcrumbItem><Link href="#">About</Link></BreadcrumbItem>
-            <BreadcrumbItem><Link href="#">Contact</Link></BreadcrumbItem>
-          </Breadcrumb>
-
+      </Row>
+        <Row>
+        <Col sm='12'>
+          {this.props.children}
         </Col>
       </Row>
+      </Container>
     )
   }
 }
