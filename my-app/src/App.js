@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
@@ -13,10 +13,8 @@ import ToDo from './app/pages/ToDo';
 import KanbanBoard from './app/components/kanban/KanbanBoard'
 
 
-
 import './app/styles/bootstrap/css/bootstrap.css';
 import './app/styles/bootstrap/css/bootstrap-theme.css';
-
 
 
 import logo from './logo.svg';
@@ -25,20 +23,20 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-        <Router history={browserHistory}>
-          <Route path="/" component={Layout}>
-            <IndexRoute component={Main} />
-            <Route path="users" component={Users} >
-              <Route path=":userId" component={User}/>
-            </Route>
-
-            <Route path="blog" component={Blog} />
-            <Route path="comets" component={Coments} />
-            <Route path="kanban" component={KanbanBoard} />
-            <Route path="todo" component={ToDo} />
-            <Route path="*" component={PageNotFound} />
+      <Router history={browserHistory}>
+        <Route path="/" component={Layout}>
+          <IndexRoute component={Main}/>
+          <Route path="users" component={Users}>
+            <Route path=":userId" component={User}/>
           </Route>
-        </Router>
+
+          <Route path="blog" component={Blog}/>
+          <Route path="comets" component={Coments}/>
+          <Route path="kanban" component={KanbanBoard}/>
+          <Route path="todo" component={ToDo}/>
+          <Route path="*" component={PageNotFound}/>
+        </Route>
+      </Router>
 
     );
   }
