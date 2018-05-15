@@ -31,7 +31,11 @@ export default class Layout extends React.Component {
     }, {
        menuhref: '/kanban',
        menutitle: 'KanbanBoard'
-    }];
+    }, {
+       menuhref: '/todo',
+       menutitle: 'ToDo'
+     },
+   ];
 
 
   render() {

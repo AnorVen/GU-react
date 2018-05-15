@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router';
+
 
 export default class User extends React.Component {
     render() {
@@ -6,7 +8,9 @@ export default class User extends React.Component {
             <div className="panel panel-default">
                 <div className="panel-heading">
                     <h3 className="panel-title">
+                      <Link to={`/users/${this.props.id}`}>
                         {this.props.username}
+                      </Link>
                     </h3>
                 </div>
                 <div className="panel-body">
