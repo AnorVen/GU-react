@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export default class PostComents extends Component{
+export default class PostComments extends Component{
   render(){
     return(
       <div className="replies">

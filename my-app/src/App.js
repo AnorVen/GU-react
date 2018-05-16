@@ -8,7 +8,8 @@ import PageNotFound from './app/pages/PageNotFound';
 import Users from './app/pages/Users';
 import User from './app/pages/User';
 import Blog from './app/pages/Blog';
-import Coments from './app/pages/Coments';
+import Comments from './app/pages/Comments';
+import Comment from './app/pages/Comment';
 import ToDo from './app/pages/ToDo';
 import KanbanBoard from './app/components/kanban/KanbanBoard'
 
@@ -16,8 +17,6 @@ import KanbanBoard from './app/components/kanban/KanbanBoard'
 import './app/styles/bootstrap/css/bootstrap.css';
 import './app/styles/bootstrap/css/bootstrap-theme.css';
 
-
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -29,9 +28,10 @@ class App extends Component {
           <Route path="users" component={Users}>
             <Route path=":userId" component={User}/>
           </Route>
-
           <Route path="blog" component={Blog}/>
-          <Route path="comets" component={Coments}/>
+          <Route path="comments" component={Comments}>
+            <Route path=":id" component={Comment}/>
+          </Route>
           <Route path="kanban" component={KanbanBoard}/>
           <Route path="todo" component={ToDo}/>
           <Route path="*" component={PageNotFound}/>

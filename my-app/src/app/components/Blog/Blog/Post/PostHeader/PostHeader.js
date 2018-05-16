@@ -3,7 +3,7 @@ import PostImage from './PostImage'
 import PostInfo from './PostInfo'
 
 
-export default class PostComents extends Component{
+export default class PostComments extends Component{
   render(){
     return(
       <div className="post_header">
