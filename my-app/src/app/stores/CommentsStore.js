@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import {ADD_COMMENT, FETCH_COMMENTS_START, FETCH_COMMENTS_END} from '../const/CommentsConst'
+import {ADD_COMMENT, FETCH_COMMENTS_START, FETCH_COMMENTS_END, SHOW_COMMENT, EDIT_COMMENT} from '../const/CommentsConst'
 import Dispatcher from '../Dispatcher';
 import axios from 'axios';
 
@@ -26,12 +26,14 @@ class CommentsStore extends EventEmitter {
           payload: response.data
         });
       })
-
   }
+
   fetchCommentsEnd(comments){
     this.comments = comments;
     this.change()
   }
+
+
 
   change(){
     this.emit('change', this.comments);
@@ -41,6 +43,13 @@ class CommentsStore extends EventEmitter {
     this.comments.push(comment);
     this.change();
   }
+
+
+
+
+
+
+
   handleAction(action){
     switch (action.type){
       case ADD_COMMENT: {this.addComent(action.payload); break}
@@ -48,6 +57,10 @@ class CommentsStore extends EventEmitter {
       case FETCH_COMMENTS_END: {this.fetchCommentsEnd(action.payload); break}
     }
   }
+
+
+
+
 }
 
 const cS = new CommentsStore();

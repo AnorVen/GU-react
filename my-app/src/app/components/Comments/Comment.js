@@ -6,7 +6,7 @@ export default class Comment extends Component{
     return(
       <div>
         <h3 className="panel-title">
-          <Link to={`/comments/${this.props.userId}`}>
+          <Link to={`/comments/${this.props.id}`}>
             {this.props.id}
           </Link>
         </h3>
