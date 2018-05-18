@@ -19,7 +19,7 @@ class CommentsStore extends EventEmitter {
 
   fetchCommentsStart() {
 
-    axios.get('https://jsonplaceholder.typicode.com/posts/')
+    axios.get('https://jsonplaceholder.typicode.com/comments')
       .then((response) => {
         Dispatcher.dispatch({
           type: FETCH_COMMENTS_END,
