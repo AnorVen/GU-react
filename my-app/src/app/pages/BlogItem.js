@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import BlogItemText from '../components/Blog/Blog/BlogList';
+import BlogItemText from '../components/Blog/Blog/Post/BlogItem';
 
 export default class BlogItem extends Component{
   render(){

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-
 import BlogList from '../components/Blog/Blog/BlogList';
 import {fetchBlogs} from '../actions/BlogActions';
 
@@ -18,7 +17,9 @@ class Blog extends Component {
   render() {
     return (
       <div>
-        {!this.props.children ? <BlogList/> :  this.props.children }
+        {
+          !this.props.children ? (this.props.is_fetching ? 'loading' :  <BlogList posts={this.props.posts} />  ) :  this.props.children
+        }
       </div>
 
     )

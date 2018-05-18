@@ -5,7 +5,7 @@ import BlogItem from './Post/BlogItem';
 
 
 export default class BlogList extends Component{
-  constructor(){
+ /* constructor(){
     super(...arguments);
 
     this.state={
@@ -13,20 +13,21 @@ export default class BlogList extends Component{
     }
 
 
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+ /!*   axios.get('https://jsonplaceholder.typicode.com/posts')
       .then((response) => {
         this.setState({
           posts: response.data
         });
-      });
+      });*!/
 
-  }
+  }*/
 
-  render(){  if(!this.state.posts.length){
+  render(){
+    if(!this.props.posts.length){
     return null;
   }
 
-    let post = this.state.posts.map((post, index)=>{
+    let post = this.props.posts.map((post, index)=>{
       return  <BlogItem key={index} {...post}/>
     });
     return(
