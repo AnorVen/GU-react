@@ -9,7 +9,7 @@ export default class PostContent extends Component{
     return(
       <div className="post_content">
         <div className="post_info">
-          <PostText />
+          <PostText body={this.props.body} title={this.props.title} />
           <PostLike />
           <PostComments />
         </div>

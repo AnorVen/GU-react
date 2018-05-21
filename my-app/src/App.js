@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {createStore} from 'redux';
-import allReucers from './app/reducers/index';
+import { allReucers, middleware } from './app/reducers/index';
 import { Provider } from 'react-redux'
 
 import Layout from './app/layouts/Layout';
@@ -11,6 +11,7 @@ import PageNotFound from './app/pages/PageNotFound';
 import Users from './app/pages/Users';
 import User from './app/pages/User';
 import Blog from './app/pages/Blog';
+import BlogItem from './app/pages/BlogItem';
 import Comments from './app/pages/Comments';
 import Comment from './app/pages/Comment';
 import ToDo from './app/pages/ToDo';
@@ -22,7 +23,7 @@ import './app/styles/bootstrap/css/bootstrap-theme.css';
 
 import './App.css';
 
-const store = createStore(allReucers);
+const store = createStore(allReucers, middleware);
 
 class App extends Component {
   render() {
@@ -34,7 +35,10 @@ class App extends Component {
             <Route path="users" component={Users}>
               <Route path=":userId" component={User}/>
             </Route>
-            <Route path="blog" component={Blog}/>
+            <Route path="blog" component={Blog}>
+              <Route path=":id" component={BlogItem}/>
+            </Route>
+
             <Route path="comments" component={Comments}>
               <Route path=":id" component={Comment}/>
             </Route>

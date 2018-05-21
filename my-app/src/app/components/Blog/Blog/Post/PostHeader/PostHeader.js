@@ -8,7 +8,7 @@ export default class PostComments extends Component{
     return(
       <div className="post_header">
         <PostImage/>
-        <PostInfo/>
+        <PostInfo id={this.props.id} userId={this.props.userId}/>
 
       </div>
 
