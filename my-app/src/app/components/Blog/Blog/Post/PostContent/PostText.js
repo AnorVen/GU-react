@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 
 export default class PostText extends Component {
+  constructor(props){
+    super(props)
+
+  }
   render() {
     return (
       <div className="wall_text">

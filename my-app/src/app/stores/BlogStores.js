@@ -4,4 +4,4 @@ import promise from 'redux-promise-middleware';
 
 import {BlogRedusers} from '../reducers/BlogRedusers';
 
-const redusers
+const redusers;

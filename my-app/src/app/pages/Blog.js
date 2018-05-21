@@ -18,7 +18,9 @@ class Blog extends Component {
     return (
       <div>
         {
-          !this.props.children ? (this.props.is_fetching ? 'loading' :  <BlogList posts={this.props.posts} />  ) :  this.props.children
+          !this.props.children ?
+            (this.props.is_fetching ? 'loading' :  <BlogList posts={this.props.posts} />  )
+            :  this.props.children
         }
       </div>
 

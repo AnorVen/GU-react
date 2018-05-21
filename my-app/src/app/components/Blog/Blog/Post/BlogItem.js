@@ -8,8 +8,8 @@ export default class BlogItem extends Component{
       <div className="feed_row">
         <div id={this.props.id} className="_post post page_block">
           <div className="_post_content">
-            <PostHeader userId={this.props.userId} id={this.props.id}/>
-            <PostContent title={this.props.title}  body={this.props.body}/>
+            <PostHeader id={this.props.id}  userId={this.props.userId}/>
+            <PostContent body={this.props.body} title={this.props.title}/>
           </div>
         </div>
       </div>
