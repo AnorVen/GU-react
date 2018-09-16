@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import {BrowserRouter as Router, Route} from 'react-router';
 
 import Layout from './app/layouts/Layout';
 import Main from './app/pages/Main';
@@ -23,18 +23,19 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <Router history={browserHistory}>
-        <Route path="/" component={Layout}>
-          <IndexRoute component={Main}/>
-          <Route path="users" component={Users}>
-            <Route path=":userId" component={User}/>
-          </Route>
+      <Router>
+        <Route exact path="/" component={Layout}>
+          <Main>
+            <Route exact path="users" component={Users}>
+              <Route path=":userId" component={User}/>
+            </Route>
 
-          <Route path="blog" component={Blog}/>
-          <Route path="comets" component={Coments}/>
-          <Route path="kanban" component={KanbanBoard}/>
-          <Route path="todo" component={ToDo}/>
-          <Route path="*" component={PageNotFound}/>
+            <Route path="blog" component={Blog}/>
+            <Route path="comets" component={Coments}/>
+            <Route path="kanban" component={KanbanBoard}/>
+            <Route path="todo" component={ToDo}/>
+            <Route path="*" component={PageNotFound}/>
+          </Main>
         </Route>
       </Router>
 
