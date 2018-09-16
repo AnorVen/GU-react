@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 import Header from '../components/Blog/Header/Header';
 import Menu from '../components/Blog/Header/Menu';
@@ -23,8 +23,8 @@ export default class Layout extends React.Component {
       menuhref: '/users',
       menutitle: 'Пользователи'
     }, {
-       menuhref: '/blog',
-       menutitle: 'Blog'
+       menuhref: '/blogs',
+       menutitle: 'Blogs'
     }, {
        menuhref: '/coments',
        menutitle: 'Coments'
