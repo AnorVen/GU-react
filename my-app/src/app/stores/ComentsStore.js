@@ -14,7 +14,7 @@ class ComentsStore extends EventEmitter{
 
     axios.get('https://jsonplaceholder.typicode.com/posts/')
       .then((response) => {
-/// 1.41
+
 
       })
 
