@@ -5,7 +5,7 @@ import Header from '../components/Blog/Header/Header';
 import Menu from '../components/Blog/Header/Menu';
 import MenuItem from '../components/Blog/Header/MenuItem';
 import Footer from '../components/Blog/Footer/Footer';
-import Coments from "../pages/Coments";
+import Comments from "../pages/Comments";
 
 
 export default class Layout extends React.Component {
@@ -26,8 +26,8 @@ export default class Layout extends React.Component {
        menuhref: '/blogs',
        menutitle: 'Blogs'
     }, {
-       menuhref: '/coments',
-       menutitle: 'Coments'
+       menuhref: '/comments',
+       menutitle: 'Comments'
     }, {
        menuhref: '/kanban',
        menutitle: 'KanbanBoard'

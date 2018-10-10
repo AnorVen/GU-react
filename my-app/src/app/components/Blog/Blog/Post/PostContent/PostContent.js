@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PostText from './PostText'
 import PostLike from './PostLike'
-import PostComents from './PostComents'
+import PostComments from './PostComments'
 
 
 export default class PostContent extends Component{
@@ -9,9 +9,9 @@ export default class PostContent extends Component{
     return(
       <div className="post_content">
         <div className="post_info">
-          <PostText />
+          <PostText body={this.props.body} title={this.props.title} />
           <PostLike />
-          <PostComents />
+          <PostComments />
         </div>
       </div>
 
